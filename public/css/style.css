@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'CenturyGothic', 'Calibri Light', 'Trebuchet MS', Tahoma, serif;
+    font-size: 1.2rem;
+}
+
+html {
+    font-size: 16px;
+}
+body{
+    background-color: #FFFFFF;
+    color: black;
+}
+hr{
+    height: 2px;
+    width: 50%;
+    margin: auto;
+}
+@font-face{
+    font-family: 'CenturyGothic';
+    src: local("CenturyGothic"),
+    url('../polices/CenturyGothic/CenturyGothic.ttf') format("truetype"),
+    url('../polices/CenturyGothic/century-gothic-reg.woff') format("woff"),
+    url('../polices/CenturyGothic/century-gothic-reg.eot') format("eot"),
+    url('../polices/CenturyGothic/century-gothic-reg.ttf') format("truetype") ;
+}
+
+.navbar{
+    color: #FFFFFF !important;
+}
+
+.flash{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 3rem 0;
+    border-radius: 5px;
+}
+.flash-success{
+    background-color: #5eb5e0;
+}
+
+.blocTitle{
+    max-width: 400px;
+    box-sizing: content-box;
+    height: 3rem;
+    margin: auto;
+
+}
+.photo{
+    max-width: 400px;
+    max-height: 300px;
+    border: 1px solid whitesmoke;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px black;
+}
+.btn_span{
+    display: flex;
+    justify-content: space-around;
+}
+/* ************************************* CSS Flexbox Double *********************************/
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding-left: 1rem;
+    align-items: center;
+    background: rgb(2,0,36);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.section__item {
+    flex: 1;
+}
+
+.section:before {
+    content: "";
+    border: 0.5px solid darkred;
+    align-self: stretch;
+    border-image: linear-gradient(90deg, #BF9759, darkred) 1;
+    background-color: lightgrey;
+
+}
+
+.section__item--start {
+    order: -1;
+}
+/**********************************Media >700 px **************/
+@media (min-width: 700px) {
+    .section {
+        align-items: center;
+        flex-direction: row;
+    }
+    .section:before {
+        width: 4px;
+        height: auto;
+    }
+
+
+
+}
+/***************************************************************************/
+@media only screen and (max-width: 699px) {
+    .photo {
+        border: 1px solid whitesmoke;
+        border-radius: 5px;
+        box-shadow: none !important;
+        box-sizing: content-box;
+        width: 80%;
+    }
+}
