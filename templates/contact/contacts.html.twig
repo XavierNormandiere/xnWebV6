@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    {% for contact in contacts %}
+    <li>
+        <p>{{ contact.email }}</p>
+        <button type="button" class="btn btn-danger">
+            <a href="#">Modifier</a>
+        </button>
+    </li>
+    {% endfor %}
+
+{% endblock %}
