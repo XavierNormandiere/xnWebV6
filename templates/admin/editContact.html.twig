@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Modification info contact</h1>
+    <h1>Modification info contact</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-warning" type="submit">Enregistrer</button>
     <br><br>
     <button type="button" class="btn btn-danger">
-        <a href="{{ path('contact_contacts') }}">Retour liste contacts</a>
+        <a href="{{ path('admin_admin') }}">Retour liste contacts</a>
     </button>
     {{ form_end(form) }}
 {% endblock %}
 
 {% block title %}
-Modofier contact {{ parent() }}
+Edit contact {{ parent() }}
 {% endblock %}
 
