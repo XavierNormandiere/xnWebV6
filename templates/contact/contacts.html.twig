@@ -6,9 +6,12 @@
 
     {% for contact in contacts %}
     <li>
-        <p>{{ contact.email }}</p>
+        <p>{{ contact.nom }} | {{ contact.email }}</p>
         <button type="button" class="btn btn-danger">
-            <a href="#">Modifier</a>
+            <a href="{{ path('contact_editContact', {'id':contact.id}) }}">Modifier</a>
+        </button>
+        <button type="button" class="btn btn-danger">
+            <a href="{{ path('contact_deleteContact', {'id':contact.id}) }}">Supprimer</a>
         </button>
     </li>
     {% endfor %}

@@ -53,4 +53,49 @@ class ContactController extends AbstractController
         ]);
     }
 
+    /**
+     * @param Request $request
+     * @param Contact $contact
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/editContact/{id}", name="editContact")
+     */
+    public function editContact(Request $request, Contact $contact, EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $em->flush();
+            $this->addFlash('success', 'Modification enregistrée avec succès !!');
+            return $this->redirectToRoute('contact_contacts');
+        }
+        $formView = $form->createView();
+        return $this->render('contact/editContact.html.twig', [
+            'form'=>$formView
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param Contact $contact
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/deleteContact/{id}", name="deleteContact")
+     */
+    public function deleteContact(Request $request, Contact $contact, EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $em->remove($contact);
+            $em->flush();
+            $this->addFlash('success', 'Contact supprimé avec succès !!');
+            return $this->redirectToRoute('contact_contacts');
+        }
+        $formView = $form->createView();
+        return $this->render('contact/deleteContact.html.twig', [
+           'form'=>$formView
+        ]);
+    }
+
 }
