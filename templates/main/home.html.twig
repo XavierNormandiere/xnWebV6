@@ -1,7 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Home {{ parent() }}{% endblock %}
 
 {% block body %}
 <H1>Home page xnormandiere.com</H1>
+    <section class="section">
+        <div class="section__item section__item--start">
+            <h2>Xavier Normandière</h2>
+            <h3>Chef de Projet Web</h3>
+            <h3>Développeur Web FrontEnd</h3>
+        </div>
+
+        <div class="section__item section__item--end">
+            <p><img src="{{ asset('img/main/Home-Small.png') }}" alt="Icone Home"> : 49130 Les Ponts de Cé</p>
+            <p><img src="{{ asset('img/main/Windows-Phone_Small.png') }}" alt="Icone Telephone"> : 06 09 97 17 71</p>
+            <p><img src="{{ asset('img/main/Mail-01-Small.png') }}" alt="Icone Mail"> : xnormandiere@gmail.com</p>
+        </div>
+    </section>
 {% endblock %}
