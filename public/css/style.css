@@ -74,8 +74,8 @@ hr{
     margin: 2rem auto;
     padding-left: 1rem;
     align-items: center;
-    background: rgb(2,0,36);
-    background: rgba(0, 0, 0, 0.3);
+    background-image: url('../img/main/fonds_panier.jpg');
+    color: whitesmoke !important;
 }
 
 .section__item {

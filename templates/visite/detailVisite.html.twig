@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1> Informations et visite guidée {{ visite.titre }}</h1>
+    <h2>{{ visite.lieu }}</h2>
+    <p>{{ visite.pays }}</p>
+    {% if visite.latitude %}
+    <p>Latitude : {{ visite.latitude }}</p>
+    {% endif %}
+    {% if visite.longitude %}
+    <p>Longitude : {{ visite.longitude }}</p>
+    {% endif %}
+    <p>Info diverses : {{ visite.information }}</p>
+    <div>
+        <img src="{{ asset('img/visites/'~visite.img1) }}" alt="photo {{ visite.titre }}" class="photo">
+        <img src="{{ asset('img/visites/'~visite.img2) }}" alt="photo {{ visite.titre }}" class="photo">
+        <img src="{{ asset('img/visites/'~visite.img3) }}" alt="photo {{ visite.titre }}" class="photo">
+    </div>
+    <a href="{{ path('visite_visites') }}">
+        <button type="button" class="btn btn-warning">Retour liste visites</button>
+    </a>
+{% endblock %}
+
+{% block title %}
+Détail de la visite
+{% endblock %}
+

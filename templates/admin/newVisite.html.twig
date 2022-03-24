@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Nouvelles visites</h1>
+    {{ form_start(formVisite) }}
+    {{ form_widget(formVisite) }}
+    <button type="submit" class="btn btn-warning">Valider</button>
+    <br><br>
+    <button type="button" class="btn btn-dark"><a href="{{ path('visite_visites') }}">Retour liste</a> </button>
+    {{ form_end(formVisite) }}
+
+{% endblock %}
+
+{% block title %}
+New Visite {{ parent() }}
+{% endblock %}
+

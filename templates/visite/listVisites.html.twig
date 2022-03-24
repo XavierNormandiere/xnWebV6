@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Visites guidées{% endblock %}
+
+{% block body %}
+    <h1>Liste des visites guidées</h1>
+
+<div class="btn_span">
+    <button type="button" class="btn btn-danger">
+        <a href="{{ path('admin_newVisite') }}">Ajouter un site</a>
+    </button>
+    <p>Visite par pays</p>
+</div>
+
+    {% for visite in visites %}
+
+        <section class="section">
+            <div class="section__item section__item--start">
+                <h3>{{ visite.titre }}</h3>
+                <p>{{ visite.lieu }}</p>
+                <p>{{ visite.pays }}</p>
+
+                <p><a href="{{ path('visite_detailVisite', {'id':visite.id}) }}">plus d'info</a> </p>
+                <p><a href="{{ path('admin_editVisite', {'id':visite.id}) }}">Modifier info</a> </p>
+            </div>
+
+            <div class="section__item section__item--endt">
+                <img src="{{ asset('img/visites/'~visite.img1) }}" alt="photo {{ visite.titre }}" class="photo">
+            </div>
+        </section>
+
+    {% endfor %}
+{% endblock %}
