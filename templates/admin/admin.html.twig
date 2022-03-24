@@ -6,8 +6,11 @@
 
     <h1>Interface d'administration système XN Web</h1>
 
-    {% for contact in contacts %}
 
+
+<section class="interface">
+    <div>
+        {% for contact in contacts %}
         <li>
             <p>{{ contact.nom }} | {{ contact.email }}</p>
             <button type="button" class="btn btn-danger">
@@ -17,7 +20,25 @@
                 <a href="{{ path('admin_deleteContact', {'id':contact.id}) }}">Supprimer</a>
             </button>
         </li>
+        {% endfor %}
+    </div>
 
+    <div>
+        <button type="button" class="btn btn-danger">
+            <a href="{{ path('admin_newVisite') }}">Ajouter un site</a>
+        </button>
+    {% for visite in visites %}
+
+        <li>
+            <p>{{ visite.titre }}</p>
+            <button type="button" class="btn btn-warning">
+                <a href="{{ path('admin_editVisite', {'id':visite.id}) }}">Modifier</a>
+            </button>
+        </li>
     {% endfor %}
+    </div>
+</section>
+
+
 
 {% endblock %}

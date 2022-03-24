@@ -65,6 +65,10 @@ hr{
     display: flex;
     justify-content: space-around;
 }
+.interface{
+    display: flex;
+    justify-content: space-around;
+}
 /* ************************************* CSS Flexbox Double *********************************/
 .section {
     display: flex;

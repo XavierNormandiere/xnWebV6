@@ -6,9 +6,7 @@
     <h1>Liste des visites guidées</h1>
 
 <div class="btn_span">
-    <button type="button" class="btn btn-danger">
-        <a href="{{ path('admin_newVisite') }}">Ajouter un site</a>
-    </button>
+
     <p>Visite par pays</p>
 </div>
 
@@ -21,7 +19,6 @@
                 <p>{{ visite.pays }}</p>
 
                 <p><a href="{{ path('visite_detailVisite', {'id':visite.id}) }}">plus d'info</a> </p>
-                <p><a href="{{ path('admin_editVisite', {'id':visite.id}) }}">Modifier info</a> </p>
             </div>
 
             <div class="section__item section__item--endt">

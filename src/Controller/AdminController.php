@@ -7,6 +7,7 @@ use App\Entity\Visite;
 use App\Form\ContactType;
 use App\Form\VisiteType;
 use App\Repository\ContactRepository;
+use App\Repository\VisiteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -25,11 +26,13 @@ class AdminController extends AbstractController
      * @return Response
      * @Route("/", name="admin")
      */
-    public function admin(ContactRepository $repository): Response
+    public function admin(ContactRepository $repository, VisiteRepository $visiteRepository): Response
     {
         $contacts = $repository->findAll();
+        $visites =$visiteRepository->findAll();
         return $this->render('admin/admin.html.twig', [
             'contacts' => $contacts,
+            'visites'=>$visites
         ]);
     }
 

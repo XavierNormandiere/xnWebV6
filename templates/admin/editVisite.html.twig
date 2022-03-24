@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<h1>Modification informations visites</h1>
+    {{ form_start(formVisite) }}
+    {{ form_widget(formVisite) }}
+    <button type="submit" class="btn btn-warning">Modifier</button>
+    <button type="button" class="btn btn-dark"><a href="{{ path('visite_visites') }}">Retour</a></button>
+    {{ form_end(formVisite) }}
+
 
 {% endblock %}
 
 {% block title %}
-
+Modifier visite
 {% endblock %}
 
