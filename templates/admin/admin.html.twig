@@ -12,8 +12,8 @@
     <div>
         {% for contact in contacts %}
         <li>
-            <p>{{ contact.nom }} | {{ contact.email }}</p>
-            <button type="button" class="btn btn-danger">
+            {{ contact.nom }} | {{ contact.email }}
+            <button type="button" class="btn btn-dark">
                 <a href="{{ path('admin_editContact', {'id':contact.id}) }}">Modifier</a>
             </button>
             <button type="button" class="btn btn-danger">
@@ -24,13 +24,13 @@
     </div>
 
     <div>
-        <button type="button" class="btn btn-danger">
+        <button type="button" class="btn btn-dark">
             <a href="{{ path('admin_newVisite') }}">Ajouter un site</a>
         </button>
     {% for visite in visites %}
 
         <li>
-            <p>{{ visite.titre }}</p>
+            {{ visite.titre }}
             <button type="button" class="btn btn-warning">
                 <a href="{{ path('admin_editVisite', {'id':visite.id}) }}">Modifier</a>
             </button>
