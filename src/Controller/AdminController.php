@@ -7,6 +7,8 @@ use App\Entity\Visite;
 use App\Form\ContactType;
 use App\Form\VisiteType;
 use App\Repository\ContactRepository;
+use App\Repository\PaysRepository;
+use App\Repository\VilleRepository;
 use App\Repository\VisiteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,16 +25,26 @@ class AdminController extends AbstractController
 {
     /**
      * @param ContactRepository $repository
+     * @param VisiteRepository $visiteRepository
+     * @param PaysRepository $paysRepository
+     * @param VilleRepository $villeRepository
      * @return Response
      * @Route("/", name="admin")
      */
-    public function admin(ContactRepository $repository, VisiteRepository $visiteRepository): Response
+    public function admin(ContactRepository $repository,
+                          VisiteRepository $visiteRepository,
+                          PaysRepository $paysRepository,
+                          VilleRepository $villeRepository): Response
     {
         $contacts = $repository->findAll();
         $visites =$visiteRepository->findAll();
+        $villes = $villeRepository->findAll();
+        $payss = $paysRepository->findAll();
         return $this->render('admin/admin.html.twig', [
             'contacts' => $contacts,
-            'visites'=>$visites
+            'visites'=>$visites,
+            'villes'=>$villes,
+            'payss'=>$payss,
         ]);
     }
 

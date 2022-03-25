@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Villes visitées{% endblock %}
+
+{% block body %}
+<h2>Villes à voir</h2>
+    {% for ville in villes %}
+        <h1>{{ ville.nomVille }}</h1>
+        <p>{{ ville.nomPays }}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PaysController!{% endblock %}
+
+{% block body %}
+    <h2>Pays traversés</h2>
+    {% for pays in payss %}
+        <h1>{{ pays.nomPays }}</h1>
+        <p>{{ pays.continent }}</p>
+        {% if pays.capitale %}
+            <p>{{ pays.capitale }}</p>
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock %}
