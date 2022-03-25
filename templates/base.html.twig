@@ -31,13 +31,14 @@
         {% endblock %} #}
     </head>
     <body>
+    {% include 'inc/nav.html.twig' %}
         <header>
-            {% include 'inc/nav.html.twig' %}
+            {% block header %}{% endblock %}
         </header>
         <main>
 
-
             {% block body %}{% endblock %}
+
         </main>
     </body>
 </html>

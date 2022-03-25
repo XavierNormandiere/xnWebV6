@@ -12,7 +12,7 @@ html {
     font-size: 16px;
 }
 body{
-    background-color: #FFFFFF;
+    background-color: #5C97FF;
     color: black;
 }
 hr{
@@ -27,6 +27,17 @@ hr{
     url('../polices/CenturyGothic/century-gothic-reg.woff') format("woff"),
     url('../polices/CenturyGothic/century-gothic-reg.eot') format("eot"),
     url('../polices/CenturyGothic/century-gothic-reg.ttf') format("truetype") ;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .3s;
+}
+a:hover{
+    color: #BF9759;
+}
+a::after{
+    color: #C89446;
 }
 
 .navbar{
@@ -43,7 +54,18 @@ hr{
 .flash-success{
     background-color: #5eb5e0;
 }
-
+label{
+    display: block;
+}
+input, textarea, select{
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 450px;
+    max-width: 60%;
+}
+textarea{
+    height: 150px;
+}
 .blocTitle{
     max-width: 400px;
     box-sizing: content-box;
@@ -78,10 +100,35 @@ hr{
     margin: 2rem auto;
     padding-left: 1rem;
     align-items: center;
-    background-image: url('../img/main/fonds_panier.jpg');
-    color: whitesmoke !important;
 }
-
+.wrap{
+    color: whitesmoke !important;
+    border-radius: 10px;
+    border: 1px solid #C89446;
+    position: relative;
+    opacity: 0.8;
+    /* background: #5C97FF; */
+    background-image: url('../img/main/carbon_texture.png');
+    overflow: hidden;
+}
+.wrap h1, h2 {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+.wrap h2 {
+    padding: 20px;
+    position: relative;
+}
+.iconeMain{
+    margin-top: 20px;
+    max-width: 100px;
+    height: auto;
+}
+.containerIcone{
+    display: flex;
+    justify-content: space-around;
+}
 .section__item {
     flex: 1;
 }

@@ -1,21 +1,66 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Home {{ parent() }}{% endblock %}
+{% block header %}{% endblock %}
+
 
 {% block body %}
-<H1>Home page xnormandiere.com</H1>
 
-    <section class="section">
+    <section class="section wrap">
         <div class="section__item section__item--start">
-            <h2>Xavier Normandière</h2>
+            <h1>Xavier Normandière</h1>
             <h3>Chef de Projet Web</h3>
-            <h3>Développeur Web FrontEnd</h3>
+            <p>Projet : www.effetdombre.com</p>
+            <p>2021 / 2022 - status : en ligne</p>
+            <p>Catalogues et interfaces d'administration</p>
+            <p>Symfony | MySql</p>
+            <br>
         </div>
 
         <div class="section__item section__item--end">
             <p><img src="{{ asset('img/main/Home-Small.png') }}" alt="Icone Home"> : 49130 Les Ponts de Cé</p>
             <p><img src="{{ asset('img/main/Windows-Phone_Small.png') }}" alt="Icone Telephone"> : 06 09 97 17 71</p>
-            <p><img src="{{ asset('img/main/Mail-01-Small.png') }}" alt="Icone Mail"> : xnormandiere@gmail.com</p>
+            <p><img src="{{ asset('img/main/Mail-01-Small.png') }}" alt="Icone Mail"><a href="{{ path('contact_formulaire') }}"> : xavier@xnormandiere.com</a></p>
         </div>
     </section>
+
+    <section class="section wrap">
+        <div class="section__item section__item--start">
+            <div class="containerIcone">
+                <p><img src="{{ asset('img/main/CSS3.webp') }}" alt="Icone CSS" class="iconeMain"> </p>
+                <p><img src="{{ asset('img/main/Symfony.png') }}" alt="Icone Angular" class="iconeMain"></p>
+            </div>
+            <div class="containerIcone">
+                <p><img src="{{ asset('img/main/php.png') }}" alt="Icone Php" class="iconeMain"> </p>
+                <p><img src="{{ asset('img/main/png-clipart-react-logo-javascript-redux-vuejs-angular-angularjs-expressjs-front-and-back-ends.png') }}" alt="Icone React.JS" class="iconeMain"></p>
+            </div>
+
+        </div>
+
+        <div class="section__item section__item--end">
+            <h3>Développeur Web Full Stack</h3>
+            <p>Symfony | Php | MySql</p>
+            <p>WordPress | Androïd | Prestashop</p>
+            <p>HTML | CSS3 | Bootstrap</p>
+            <p>Javascript : Angular | React.Js | Vu.Js</p>
+            <br>
+        </div>
+    </section>
+
+    <section class="section wrap">
+        <div class="section__item section__item--start">
+            <h2>Autres sites développés</h2>
+            <p>Artisites : Bert (2010)| K Private Gallery (2007)</p>
+            <p>Agence Immobilières : XNConsulting (2005) | Blue Bay (2008) | TEREC (2001) | Ideal R.E. (2006)</p>
+            <p>Bar - Brasserie : Café Borghèse Nice (2010)</p>
+            <p>Site de réservation en ligne librairie marine : Riviera-Charts (2010)</p>
+            <br>
+        </div>
+
+        <div class="section__item section__item--end">
+            <img src="{{ asset('img/main/webHand.jpg') }}" alt="Globe dans une main" class="photo">
+            <br>
+        </div>
+    </section>
+
 {% endblock %}
