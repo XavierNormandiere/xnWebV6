@@ -9,6 +9,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -22,7 +25,7 @@ class ContactController extends AbstractController
      * @return Response
      * @Route("/formulaire", name="formulaire")
      */
-    public function createContact(Request $request, EntityManagerInterface $em): Response
+    public function createContact(Request $request, EntityManagerInterface $em, MailerInterface $mailer): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -31,6 +34,22 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $em->persist($contact);
             $em->flush();
+
+            $email = (new Email())
+                ->from('contact@xnormandiere.com')
+                ->to('xavier@xnormandiere.com')
+                ->subject('Message de XNWeb')
+                ->text('Nouveau contact')
+                ->html('<p>Email de : </p>'
+                    . $contact->getEmail() . '<p>message : </p>'
+                    . $contact->getMessage()
+                );
+            try {
+                $mailer->send($email);
+            } catch (TransportExceptionInterface $e){
+                return $this->redirectToRoute('main_home');
+            }
+
             $this->addFlash('success', 'Enregistrement réussi');
             return $this->redirectToRoute('main_home');
         }

@@ -27,6 +27,11 @@ class Contact
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $message;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Contact
     public function setEmail(string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(?string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
