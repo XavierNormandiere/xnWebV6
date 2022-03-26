@@ -5,12 +5,24 @@
 {% block body %}
     <h2>Pays traversés</h2>
     {% for pays in payss %}
-        <h1>{{ pays.nomPays }}</h1>
-        <p>{{ pays.continent }}</p>
-        {% if pays.capitale %}
-            <p>{{ pays.capitale }}</p>
+        <section class="section wrap">
+        <div class="section__item section__item--start">
+            <h1>{{ pays.nomPays }}</h1>
+            <p>{{ pays.continent }}</p>
+            {% if pays.capitale %}
+                <p>Capitale : {{ pays.capitale }}</p>
+            {% endif %}
+            <p>Langue(s) : {{ pays.langue }} | Monnaie : {{ pays.monnaie }}</p>
+        </div>
+        <div class="section__item section__item--end">
+        {% if pays.img1 %}
+            <figure>
+                <img src="{{ asset('img/pays/'~pays.img1) }}" alt="photo {{ pays.nomPays }}" class="photo">
+                <figcaption>{{ pays.nomPays }}</figcaption>
+            </figure>
         {% endif %}
-    {% endfor %}
 
-
+    </div>
+        </section>
+{% endfor %}
 {% endblock %}

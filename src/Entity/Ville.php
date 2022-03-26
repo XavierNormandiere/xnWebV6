@@ -33,11 +33,6 @@ class Ville
     private $province;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $capitale;
-
-    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $info;

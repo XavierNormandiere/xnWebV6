@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Pays;
+use App\Entity\Ville;
 use App\Entity\Visite;
 use App\Form\ContactType;
+use App\Form\PaysType;
+use App\Form\VilleType;
 use App\Form\VisiteType;
 use App\Repository\ContactRepository;
 use App\Repository\PaysRepository;
@@ -215,7 +219,7 @@ class AdminController extends AbstractController
 
             $em->persist($visite);
             $em->flush();
-            $this->addFlash('success', 'Nouvelle visite ajoutée avec succès !!');
+            $this->addFlash('success', 'Visite modifiée avec succès !!');
             return $this->redirectToRoute('visite_visites');
         }
         $formView = $formVisite->createView();
@@ -224,6 +228,200 @@ class AdminController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @param Request $request
+     * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/createPays", name="createPays")
+     */
+    public function createPays(Request $request, SluggerInterface $slugger, EntityManagerInterface $em):Response
+    {
+        $pays = new Pays();
+        $formPays = $this->createForm(PaysType::class, $pays);
+        $formPays->handleRequest($request);
+        if ($formPays->isSubmitted() && $formPays->isValid()){
+            $imgFile1 = $formPays->get('img1')->getData();
+            $imgFile2 = $formPays->get('img2')->getData();
+            if ($imgFile1){
+                $originalFilename = pathinfo($imgFile1->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile1->guessExtension();
+                try {
+                    $imgFile1->move($this->getParameter('pays_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('pays_pays');
+                }
+                $pays->setImg1($newFilename);
+            }
+
+            if ($imgFile2){
+                $originalFilename = pathinfo($imgFile2->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile2->guessExtension();
+                try {
+                    $imgFile2->move($this->getParameter('pays_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('pays_pays');
+                }
+                $pays->setImg2($newFilename);
+            }
+            $em->persist($pays);
+            $em->flush();
+            $this->addFlash('success', 'Pays ajouté avec succès !!');
+            return $this->redirectToRoute('pays_pays');
+        }
+        $formView = $formPays->createView();
+        return $this->render('admin/createPays.html.twig', [
+            'formPays'=>$formView,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param Pays $pays
+     * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/editPays/{id}", name="editPays")
+     */
+    public function editPays(Request $request, Pays $pays, SluggerInterface $slugger, EntityManagerInterface $em):Response
+    {
+        $formPays = $this->createForm(PaysType::class, $pays);
+        $formPays->handleRequest($request);
+        if ($formPays->isSubmitted() && $formPays->isValid()){
+            $imgFile1 = $formPays->get('img1')->getData();
+            $imgFile2 = $formPays->get('img2')->getData();
+            if ($imgFile1){
+                $originalFilename = pathinfo($imgFile1->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile1->guessExtension();
+                try {
+                    $imgFile1->move($this->getParameter('pays_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('pays_pays');
+                }
+                $pays->setImg1($newFilename);
+            }
+
+            if ($imgFile2){
+                $originalFilename = pathinfo($imgFile2->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile2->guessExtension();
+                try {
+                    $imgFile2->move($this->getParameter('pays_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('pays_pays');
+                }
+                $pays->setImg2($newFilename);
+            }
+            //$em->persist($pays);
+            $em->flush();
+            $this->addFlash('success', 'Pays modifié avec succès !!');
+            return $this->redirectToRoute('pays_pays');
+        }
+        $formView = $formPays->createView();
+        return $this->render('admin/editPays.html.twig', [
+            'formPays'=>$formView
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/createVille", name="createVille")
+     */
+    public function createVille(Request $request, SluggerInterface $slugger, EntityManagerInterface $em): Response
+    {
+        $ville = new Ville();
+        $formVille = $this->createForm(VilleType::class, $ville);
+        $formVille->handleRequest($request);
+        if ($formVille->isSubmitted() && $formVille->isValid()){
+            $imgFile1 = $formVille->get('img1')->getData();
+            $imgFile2 = $formVille->get('img2')->getData();
+            if ($imgFile1){
+                $originalFilename = pathinfo($imgFile1->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile1->guessExtension();
+                try {
+                    $imgFile1->move($this->getParameter('ville_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('ville_villes');
+                }
+                $ville->setImg1($newFilename);
+            }
+            if ($imgFile2){
+                $originalFilename = pathinfo($imgFile2->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile2->guessExtension();
+                try {
+                    $imgFile2->move($this->getParameter('ville_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('ville_villes');
+                }
+                $ville->setImg2($newFilename);
+            }
+            $em->persist($ville);
+            $em->flush();
+            $this->addFlash('success', 'Ville ajoutée avec succès !!');
+            return $this->redirectToRoute('ville_villes');
+        }
+        $formView = $formVille->createView();
+        return $this->render('admin/createVille.html.twig', [
+            'formVille'=>$formView,
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param Ville $ville
+     * @param SluggerInterface $slugger
+     * @param EntityManagerInterface $em
+     * @return Response
+     * @Route("/editVille/{id}", name="editVille")
+     */
+    public function editVille(Request $request, Ville $ville, SluggerInterface $slugger, EntityManagerInterface $em): Response
+    {
+        $formVille = $this->createForm(VilleType::class, $ville);
+        $formVille->handleRequest($request);
+        if ($formVille->isSubmitted() && $formVille->isValid()){
+            $imgFile1 = $formVille->get('img1')->getData();
+            $imgFile2 = $formVille->get('img2')->getData();
+            if ($imgFile1){
+                $originalFilename = pathinfo($imgFile1->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile1->guessExtension();
+                try {
+                    $imgFile1->move($this->getParameter('ville_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('ville_villes');
+                }
+                $ville->setImg1($newFilename);
+            }
+            if ($imgFile2){
+                $originalFilename = pathinfo($imgFile2->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'.'.$imgFile2->guessExtension();
+                try {
+                    $imgFile2->move($this->getParameter('ville_directory'), $newFilename);
+                } catch (FileException $exception){
+                    return $this->redirectToRoute('ville_villes');
+                }
+                $ville->setImg2($newFilename);
+            }
+            $em->persist($ville);
+            $em->flush();
+            $this->addFlash('success', 'Ville ajoutée avec succès !!');
+            return $this->redirectToRoute('ville_villes');
+        }
+        $formView = $formVille->createView();
+        return $this->render('admin/editVille.html.twig', [
+            'formVille'=>$formView,
+        ]);
+    }
 
 
 }

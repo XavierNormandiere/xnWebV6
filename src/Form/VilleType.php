@@ -28,10 +28,6 @@ class VilleType extends AbstractType
                 'label'=>'Province : ',
                 'required'=>false,
             ])
-            ->add('capitale', CheckboxType::class, [
-                'label'=>'Capitale : ',
-                'required'=>true,
-            ])
             ->add('info', TextareaType::class, [
                 'label'=>'Informations',
                 'required'=>false,

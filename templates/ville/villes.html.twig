@@ -5,7 +5,19 @@
 {% block body %}
 <h2>Villes à voir</h2>
     {% for ville in villes %}
-        <h1>{{ ville.nomVille }}</h1>
-        <p>{{ ville.nomPays }}</p>
+        <section class="section wrap">
+            <div class="section__item section__item--start">
+                <h3>{{ ville.nomVille }}</h3>
+                <p>{{ ville.nomPays }}</p>
+                <p>Province : {{ ville.province }}</p>
+                <p>{{ ville.info }}</p>
+
+                <p><a href="#">plus d'info</a> </p>
+            </div>
+
+            <div class="section__item section__item--end">
+                <img src="{{ asset('img/villes/'~ville.img1) }}" alt="photo {{ ville.nomVille }}" class="photo">
+            </div>
+        </section>
     {% endfor %}
 {% endblock %}

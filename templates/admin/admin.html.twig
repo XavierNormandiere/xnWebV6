@@ -38,7 +38,37 @@
     {% endfor %}
     </div>
 </section>
+    <section class="interface">
+        <div>
+            {% for pays in payss %}
+            <li>
+                {{ pays.nomPays }}
+                <button type="button" class="btn btn-warning">
+                    <a href="{{ path('admin_editPays', {'id':pays.id}) }}">Modifier</a>
+                </button>
+            </li>
+            {% endfor %}
+            <button type="button" class="btn btn-dark">
+                <a href="{{ path('admin_createPays') }}">Ajouter Pays</a>
+            </button>
+        </div>
+    </section>
 
+    <section class="interface">
+        <div>
+            {% for ville in villes %}
+            <li>
+                {{ ville.nomVille }} | {{ ville.nomPays }}
+                <button type="button" class="btn btn-warning">
+                    <a href="{{ path('admin_editVille', {'id':ville.id}) }}">Modifier</a>
+                </button>
+            </li>
+            {% endfor %}
+            <button type="button" class="btn btn-dark">
+                <a href="{{ path('admin_createVille') }}">Ajouter ville</a>
+            </button>
+        </div>
+    </section>
 
 
 {% endblock %}

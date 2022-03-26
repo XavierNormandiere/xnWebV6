@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Modofocations sur Pays</h1>
+    {{ form_start(formPays) }}
+    {{ form_widget(formPays) }}
+    <button type="submit" class="btn btn-warning">Modifier</button>
+    <button type="button" class="btn btn-dark"><a href="{{ path('pays_pays') }}">Retour</a></button>
+
+    {{ form_end(formPays) }}
+{% endblock %}
+
+{% block title %}
+Modification pays
+{% endblock %}
+

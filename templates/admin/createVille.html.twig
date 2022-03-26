@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> Nouvelle ville</h1>
+
+    {{ form_start(formVille) }}
+    {{ form_widget(formVille) }}
+    <button type="submit" class="btn btn-warning">Valider</button>
+    <br><br>
+    <button type="button" class="btn btn-dark"><a href="{{ path('ville_villes') }}">Retour liste</a> </button>
+
+    {{ form_end(formVille) }}
+{% endblock %}
+
+{% block title %}
+Nouvelle ville
+{% endblock %}
+

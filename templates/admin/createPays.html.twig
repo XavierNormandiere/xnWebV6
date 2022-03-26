@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Ajout de nouveaux pays</h1>
+    {{ form_start(formPays) }}
+    {{ form_widget(formPays) }}
+    <button type="submit" class="btn btn-warning">Enregistrer</button>
+    <br><br>
+    <button type="button" class="btn btn-dark"><a href="{{ path('pays_pays') }}">Retour liste</a> </button>
+    {{ form_end(formPays) }}
+{% endblock %}
+
+{% block title %}
+Création nouveau Pays
+{% endblock %}
+
