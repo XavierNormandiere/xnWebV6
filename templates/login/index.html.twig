@@ -7,18 +7,20 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('login') }}" method="post" class="blocTitle">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+    <div class="blocLogin">
+        <h2>Connectez vous à votre espace</h2>
+        <form action="{{ path('login') }}" method="post" class="">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}"/>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password"/>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password"/>
 
-        {# If you want to control the URL the user is redirected to on success#}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-        <p>
-            <button type="submit" class="btn btn-warning">connexion</button>
-        </p>
-    </form>
-
+            {# If you want to control the URL the user is redirected to on success#}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+            <p>
+                <button type="submit" class="btn btn-light">connexion</button>
+            </p>
+        </form>
+    </div>
 {% endblock %}

@@ -24,7 +24,7 @@ class RegistrationFormType extends AbstractType
                 'required'=>true
             ])
             ->add('prenom', TextType::class, [
-                'label'=>'Votre prénom : ',
+                'label'=>'Prénom / username : ',
                 'required'=>false
             ])
             ->add('agreeTerms', CheckboxType::class, [

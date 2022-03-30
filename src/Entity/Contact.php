@@ -32,6 +32,11 @@ class Contact
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $conditions;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Contact
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getConditions(): ?bool
+    {
+        return $this->conditions;
+    }
+
+    public function setConditions(bool $conditions): self
+    {
+        $this->conditions = $conditions;
 
         return $this;
     }

@@ -5,62 +5,94 @@
 
 
 {% block body %}
+    <h1 class="mainTitle">Xavier Normandière</h1>
 
-    <section class="section wrap">
-        <div class="section__item section__item--start">
-            <h1>Xavier Normandière</h1>
-            <h3>Chef de Projet Web</h3>
-            <p>Projet : www.effetdombre.com</p>
-            <p>2021 / 2022 - status : en ligne</p>
-            <p>Catalogues et interfaces d'administration</p>
-            <p>Symfony | MySql</p>
+    <section class="bloc1 reveal">
+        <div class="bloc1a reveal-3">
+
+            <p><img src="{{ asset('img/main/Home-Small.png') }}" alt="Icone Home"> : 49130 Les Ponts de Cé</p><br>
+            <p><img src="{{ asset('img/main/Windows-Phone_Small.png') }}" alt="Icone Telephone"> : 06 09 97 17 71</p><br>
+            <p><a href="{{ path('contact_formulaire') }}"><img src="{{ asset('img/main/Mail-01-Small.png') }}" alt="Icone Mail"> : xavier@xnormandiere.com</a></p>
+
             <br>
         </div>
 
-        <div class="section__item section__item--end">
-            <p><img src="{{ asset('img/main/Home-Small.png') }}" alt="Icone Home"> : 49130 Les Ponts de Cé</p>
-            <p><img src="{{ asset('img/main/Windows-Phone_Small.png') }}" alt="Icone Telephone"> : 06 09 97 17 71</p>
-            <p><img src="{{ asset('img/main/Mail-01-Small.png') }}" alt="Icone Mail"><a href="{{ path('contact_formulaire') }}"> : xavier@xnormandiere.com</a></p>
-        </div>
-    </section>
-
-    <section class="section wrap">
-        <div class="section__item section__item--start">
-            <div class="containerIcone">
-                <p><img src="{{ asset('img/main/CSS3.webp') }}" alt="Icone CSS" class="iconeMain"> </p>
-                <p><img src="{{ asset('img/main/Symfony.png') }}" alt="Icone Angular" class="iconeMain"></p>
-            </div>
-            <div class="containerIcone">
-                <p><img src="{{ asset('img/main/php.png') }}" alt="Icone Php" class="iconeMain"> </p>
-                <p><img src="{{ asset('img/main/png-clipart-react-logo-javascript-redux-vuejs-angular-angularjs-expressjs-front-and-back-ends.png') }}" alt="Icone React.JS" class="iconeMain"></p>
-            </div>
-
-        </div>
-
-        <div class="section__item section__item--end">
-            <h3>Développeur Web Full Stack</h3>
+        <article class="bloc1b reveal-4">
+            <h3>Développeur Web et appli mobiles</h3>
             <p>Symfony | Php | MySql</p>
             <p>WordPress | Androïd | Prestashop</p>
             <p>HTML | CSS3 | Bootstrap</p>
-            <p>Javascript : Angular | React.Js | Vu.Js</p>
+            <p>Javascript : Angular | React.Js</p>
+            <p>Microsft SQL Server manager</p>
+        </article>
+    </section>
+<br>
+    <section class="wrap2 reveal">
+        <article class="alignTxt reveal-4">
+            <h3>Chef de Projet Web</h3>
+            <p>Projet : <a href="https://www.effetdombre.com"> www.effetdombre.com</a></p>
+            <p>2021 / 2022 - status : en ligne</p>
+            <p>Catalogues et interfaces d'administration, appli de gestion de stock</p>
+            <p>Symfony | MySql</p>
             <br>
-        </div>
+        </article>
     </section>
 
-    <section class="section wrap">
-        <div class="section__item section__item--start">
+    <section class="wrap3 reveal">
+        <article class="bloc3 reveal-3">
             <h2>Autres sites développés</h2>
             <p>Artistes : Bert (2010)| K Private Gallery (2007)</p>
             <p>Agences Immobilières : XNConsulting (2005) | Blue Bay (2008) | TEREC (2001) | Ideal R.E. (2006)</p>
             <p>Bar - Brasserie : Café Borghèse Nice (2010)</p>
             <p>Site de réservation en ligne librairie marine : Riviera-Charts (2010)</p>
             <br>
-        </div>
+        </article>
 
-        <div class="section__item section__item--end">
-            <img src="{{ asset('img/main/webHand.jpg') }}" alt="Globe dans une main" class="photo">
+        <div class="bloc3b reveal-5">
+            <img src="{{ asset('img/main/webHand.jpg') }}" alt="Globe dans une main" class="photo hidden">
             <br>
         </div>
     </section>
 
+    <section class="section wrap4 reveal">
+        <article class="section__item section__item--start reveal-4">
+            <h2>Pour les pro de l'immobilier</h2>
+            <p>Avec plus de 12 ans d'expérience en tant qu'administrateur, négociateur et directeur d'agence,
+                je mets à votre disposition mes connaissances dans le domaine de l'immobilier
+                pour réaliser ensemble les applications métiers qui vous correspondent.</p>
+        </article>
+        <div class="section__item section__item--end reveal-5">
+            <p><img src="{{ asset('img/main/browser_64px.png') }}" alt="icone browser" class="iconeTxttop">Sites internet avec interfaces sur mesures</p>
+            <p><img src="{{ asset('img/main/compose_64px.png') }}" alt="icone" class="iconeTxt">Etats de lieux</p>
+            <p><img src="{{ asset('img/main/chat_64px.png') }}" alt="icone" class="iconeTxt">Blog, news letter, rapports de visites</p>
+            <p><img src="{{ asset('img/main/document_64px.png') }}" alt="icone" class="iconeTxt">Rapports d'estimations</p>
+        </div>
+    </section>
+
+    <section class="fondsBiColor reveal-4">
+        <h2 class="">Et tous vos projets web et applications métier</h2>
+        <div class="blocFinal">
+            <div class="cadreImg">
+                <h5 class="">Sites e business</h5><hr><br>
+                <p><img src="{{ asset('img/main/E_business_e_commerce.jpg') }}" alt="photo business" class="photoBusiness"></p>
+                <p><a href="{{ path('contact_formulaire') }}"> Site marchand, click & collect' +++</a></p>
+            </div>
+            <div class="cadreImg">
+                <h5>Librairies et galeries en ligne</h5><hr><br>
+                <p><img src="{{ asset('img/main/Librairies_bibliothèques.jpg') }}" alt="photo business" class="photoBusiness"></p>
+                <p><a href="{{ path('contact_formulaire') }}">Explorons ensemble votre projet +++</a></p>
+            </div>
+            <div class="cadreImg">
+                <h5>Vos applications sur-mesures</h5><hr><br>
+                <p><img src="{{ asset('img/main/puzzsle_appli_sur_mesure.jpg') }}" alt="photo business" class="photoBusiness"></p>
+                <p><a href="{{ path('contact_formulaire') }}">Contactez moi pour une étude gratuite +++</a></p>
+            </div>
+        </div>
+        <br>
+    </section>
+
+    <br>
+    <br>
 {% endblock %}
+
+            {% block footer %}{% include ('inc/foot.html.twig') %}{% endblock %}

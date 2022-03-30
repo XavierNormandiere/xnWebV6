@@ -12,13 +12,18 @@ html {
     font-size: 16px;
 }
 body{
-    background-color: #5C97FF;
+    /* background-color: #c53362; /* #879f85    #00579a #c53362 #81a1ba  #00656f  #004040*/
+    background-image: url('../img/main/fondsColorVert.jpg');
+    background-size: cover;
     color: black;
 }
 hr{
     height: 2px;
     width: 50%;
     margin: auto;
+}
+header{
+    border: 1px solid #6AE2D6;
 }
 @font-face{
     font-family: 'CenturyGothic';
@@ -40,9 +45,6 @@ a::after{
     color: #C89446;
 }
 
-.navbar{
-    color: #FFFFFF !important;
-}
 
 .flash{
     padding: 20px;
@@ -52,19 +54,25 @@ a::after{
     border-radius: 5px;
 }
 .flash-success{
-    background-color: #5eb5e0;
+    background-color: #3AAAAE;
 }
 label{
     display: block;
 }
-input, textarea, select{
+select{
     margin-bottom: 1rem;
     box-sizing: border-box;
-    width: 450px;
+    width: 400px;
     max-width: 60%;
+    border-radius: 5px;
+
 }
 textarea{
-    height: 150px;
+    height: 180px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
 }
 
 figcaption {
@@ -99,25 +107,154 @@ figcaption {
     display: flex;
     justify-content: space-around;
 }
+
+.fondsBiColor{
+
+    background-image: url('../img/main/fondTransparent.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 1100px;
+    height: auto;
+    margin: auto;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Poppins', sans-serif;
+}
+.fondsBiColor h2{
+    max-width: 850px;
+    margin: auto;
+}
+
+.bloc1{
+    max-width: 1100px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url('../img/main/fondTransparent.png');
+    background-size: cover;
+    border-radius: 25px;
+}
+.mainTitle{
+    font-family: 'Kristi', cursive;
+    font-size: 5rem;
+    text-shadow: 2px 2px 4px black;
+    max-width: 500px;
+    padding-top: 4rem;
+    margin: 2rem auto;
+}
+.bloc1a{
+    border-right: 1px solid white;
+    padding-top: 3rem;
+    padding-right: 1rem;
+}
+.bloc1b{
+    padding-top: 2rem;
+    padding-right: 2rem;
+}
+.bloc1b h3{
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Poppins', sans-serif;
+}
+.bloc3{
+    padding-left: 4rem;
+}
+.bloc3 h2{
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Poppins', sans-serif;
+
+}
+.bloc3b{
+    padding-left: 4rem;
+
+}
+.blocFinal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cadreImg{
+    width: 300px;
+    height: auto;
+    margin: 0 1rem 0 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding-top: 5px;
+}
+.photoBusiness{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+
+
 /* ************************************* CSS Flexbox Double *********************************/
 .section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 2rem auto;
     padding-left: 1rem;
     align-items: center;
 }
+/*
 .wrap{
     color: whitesmoke !important;
     border-radius: 10px;
     border: 1px solid #C89446;
     position: relative;
-    opacity: 0.8;
-    /* background: #5C97FF; */
-    background-image: url('../img/main/carbon_texture.png');
+    opacity: 1;
+    background: #00579a;
+    background-image: url('../img/main/leather.png');
     overflow: hidden;
+} */
+.wrap2{
+    max-width: 1100px;
+    height: 30rem;
+    margin: auto;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+
+    /* border-radius: 10px; */
+    /* border: 1px solid #C89446; */
+    background-image: url('../img/main/Bouton.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.alignTxt{
+    max-width: 250px;
+    margin: 1rem auto;
+    padding-top: 3rem;
+    padding-left: 2rem;
+}
+.alignTxt h3{
+    text-shadow: 2px 2px 4px black;
+
+}
+.wrap3{
+    max-width: 1100px;
+    margin: 2rem auto;
+    color: whitesmoke !important;
+    border-radius: 10px;
+    position: relative;
+    opacity: 1;
+    background-image: url('../img/main/fondsRougei.jpg');
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.wrap4{
+    color: whitesmoke !important;
+    border-radius: 10px;
+    position: relative;
+    opacity: 0.9;
+    background-image: url('../img/main/leather.png');
+    overflow: hidden;
+    text-shadow: 2px 2px 4px black;
+    font-family: 'Poppins', sans-serif;
 }
 .wrap h1, h2 {
     padding: 20px;
@@ -134,8 +271,20 @@ figcaption {
     height: auto;
 }
 .containerIcone{
+    text-align: left;
     display: flex;
     justify-content: space-around;
+}
+.containerIcone2{
+    display: flex;
+    justify-content: space-between;
+}
+.iconeTxt{
+    margin-right: 5px;
+}
+.iconeTxttop{
+    margin-right: 5px;
+    margin-top: 15px;
 }
 .section__item {
     flex: 1;
@@ -166,8 +315,10 @@ figcaption {
 
 
 
+
+
 }
-/***************************************************************************/
+/**********************************************Media < 699px *****************************/
 @media only screen and (max-width: 699px) {
     .photo {
         border: 1px solid whitesmoke;
@@ -176,4 +327,182 @@ figcaption {
         box-sizing: content-box;
         width: 80%;
     }
+
+    .bloc1 {
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+
+    .mainTitle {
+        margin-left: 1rem;
+    }
+
+    .blocFinal{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
 }
+/************************************NavBar ***********************/
+.navbarPerso{
+    background-image: url('../img/main/navbar.png') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #BF9759;
+    height: 5rem;
+    width: 100%;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    position: fixed;
+}
+.mobileFullScreen{
+    display: none;
+}
+#menu{
+    display: flex;
+    list-style-type: none;
+    height: 25px;
+    justify-content: left;
+    padding-top: 20px;
+    gap: 1rem;
+}
+nav ul{
+    list-style-type: none;
+}
+.mobile {
+    display: none;
+}
+@media only screen and (max-width: 799px){
+    body {background-image: url('../img/main/navbar.png');}
+    #menu li a, #menu li a:visited {font-size: 0.9rem;}
+}
+@media only screen and (max-width: 599px) {
+    .mobile {
+        display: block;
+    }
+
+    .mobileFullScreen {
+        display: block;
+        text-align: center;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    #menu {
+        display: block;
+        height: 0;
+    }
+
+    #menu.afficher {
+        height: auto;
+        background-color: #6AE2D6;
+    }
+
+    #menu {
+        transition: height 1s;
+        overflow: hidden;
+        border-bottom: none;
+        background-image: url('../img/main/navbar.png');
+    }
+
+    #menu li {
+        border-bottom: solid 1px #BF9759;
+    }
+
+    #menu li a, #menu li a:visited {
+        font-size: 1rem;
+        line-height: 30px;
+        text-align: left;
+        padding-left: 10%;
+    }
+
+    #boutonMenu {
+        display: block;
+        line-height: 3rem;
+        text-align: center;
+        padding-right: 10%;
+        color: white;
+        text-decoration: none;
+        height: 7px;
+    }
+    .hidden{
+        display: none;
+    }
+
+}
+
+/*************************** FOOTER *********************/
+
+footer{
+
+
+    height: 100%;
+
+}
+.foot{
+    background-image: url('../img/main/fondsViolet50.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: -1rem;
+    padding-bottom: 1rem;
+    border-radius: 45px 0 0 0;
+}
+
+
+/*********Login Page *********************************/
+.blocLogin{
+    max-width: 600px;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 7rem auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+    background-image: url('../img/main/fondsViolet50.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.blocLogin h2{
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 2px violet;
+}
+
+
+    /* effet sur scroll ********************************************* */
+.reveal-loaded .reveal [class*="reveal-"] {
+    opacity: 0!important;
+    transform: translateY(30px)!important;
+    transition: 0s!important;
+}
+.reveal-loaded [class*="reveal-"]{
+    transition: 1s cubic-bezier(.5, 0, 0, 1);
+}
+.reveal-loaded  .reveal-2 {
+    transition-delay: .2s;
+}
+.reveal-loaded .reveal-3 {
+    transition-delay: .3s;
+}
+.reveal-loaded .reveal-4 {
+    transition-delay: .4s;
+}
+.reveal-loaded .reveal-5 {
+    transition-delay: .5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal [class*="reveal-"] {
+        opacity: 1!important;
+        transform: translateY(0px)!important;
+    }
+    [class*="reveal-"]{
+        transition-duration: 0s!important;
+        transition-delay: 0s!important;
+    }
+}
+
+/* fin effet sur scroll */

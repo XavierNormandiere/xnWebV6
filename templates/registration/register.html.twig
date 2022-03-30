@@ -3,6 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+    <section class="blocLogin">
     <h1>Register</h1>
 
     {{ form_start(registrationForm) }}
@@ -10,8 +11,10 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+        <button type="submit" class="btn btn-light">Register</button>
     {{ form_end(registrationForm) }}
+    </section>
 {% endblock %}

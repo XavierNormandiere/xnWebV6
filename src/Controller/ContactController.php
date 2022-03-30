@@ -37,12 +37,11 @@ class ContactController extends AbstractController
 
             $email = (new Email())
                 ->from('contact@xnormandiere.com')
-                ->to('xavier@xnormandiere.com')
+                ->to('xav.norm@gmail.com')
                 ->subject('Message de XNWeb')
                 ->text('Nouveau contact')
-                ->html('<p>Email de : </p>'
-                    . $contact->getEmail() . '<p>message : </p>'
-                    . $contact->getMessage()
+                ->html('<p>Email de : </p>' . $contact->getEmail()
+                    . '<p>Message : </p>' . $contact->getMessage()
                 );
             try {
                 $mailer->send($email);
@@ -50,7 +49,7 @@ class ContactController extends AbstractController
                 return $this->redirectToRoute('main_home');
             }
 
-            $this->addFlash('success', 'Enregistrement réussi');
+            $this->addFlash('success', 'Email envoyé avec succès !!');
             return $this->redirectToRoute('main_home');
         }
         $formView = $form->createView();
