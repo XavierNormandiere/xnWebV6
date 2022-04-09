@@ -4,6 +4,7 @@
 {% block header %}{% endblock %}
 
 {% block body %}
+    {% if app.user %}
     <h2 class="mainTitle">Destination Amériques</h2>
     <section id="introBloc2"><!--menu 1 page en javascript-->
 
@@ -81,8 +82,9 @@
         <a href="#"><img src="{{ asset('img/visites/mini/Mini_Santiago-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
     </div>
 </section>
+{% else %}
 
-
+{% endif %}
     {#
     {% for visite in visites %}
 
