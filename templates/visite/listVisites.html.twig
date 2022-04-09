@@ -1,15 +1,89 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Visites guidées{% endblock %}
+{% block header %}{% endblock %}
 
 {% block body %}
-    <h1>Liste des visites guidées</h1>
+    <h2 class="mainTitle">Destination Amériques</h2>
+    <section id="introBloc2"><!--menu 1 page en javascript-->
 
-<div class="btn_span">
+        <!--Ici les boutons destinations-->
+        <div class="blocDestinations">
+            <h4>Choississez votre destination :</h4>
+            <div class="blocBtnCanada">
+                <span class="bouton" id="bouton_cana" onclick="afficher_cana('cana');">Canada</span>
+            </div>
+            <div class="blocBtnNY">
+                <span class="bouton" id="bouton_nyc" onclick="afficher_nyc('nyc');">New York</span>
+            </div>
+            <div class="blocBtnCalif">
+                <span class="bouton" id="bouton_cali" onclick="afficher_cali('cali');">Californie</span>
+            </div>
+            <div class="blocBtnEquat">
+                <span class="bouton" id="bouton_equa" onclick="afficher_equa('equa');">Equateur</span>
+            </div>
+            <div class="blocBtnPerou">
+                <span class="bouton" id="bouton_peru" onclick="afficher_peru('peru');">Perou</span>
+            </div>
+            <div class="blocBtnStgo">
+                <span class="bouton" id="bouton_stgo" onclick="afficher_stgo('stgo');">Santiago</span>
+            </div>
+        </div>
+        <!--Ici les images et texte au clik-->
+        <div class="blocImg">
+            <div id="cana" class="cana">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="Canada"></a></p>
+            </div>
+            <div id="nyc" class="nyc">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="New York"></a></p>
+            </div>
+            <div id="cali" class="cali">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="californie"></a></p>
+            </div>
+            <div id="equa" class="equa">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="Equateur"></a></p>
+            </div>
+            <div id="peru" class="peru">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="Perou"></a></p>
+            </div>
+            <div id="stgo" class="stgo">
+                <p><a href="#"><img src="{{ asset('img/visites/pin_35px.png') }}" alt="" title="Santiago"></a></p>
+            </div>
 
-    <p>Visite par pays</p>
-</div>
+        </div>
+    </section>
 
+{# *********************************** Version Mobile************************* #}
+
+<section class="HiddenWorld">
+    <div class="HiddenDestinations">
+        <h5><a href="#"> Canada, province de Quebec</a></h5>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_Quebec-min.jpg') }}" alt="Chateau de Quebec" class="HiddenImg"></a>
+    </div>
+    <div class="HiddenDestinations">
+        <h5><a href="#">USA, New York à Boston</a></h5>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_New_York_City-min.jpg') }}" alt="New York City" class="HiddenImg"></a>
+    </div>
+    <div class="HiddenDestinations">
+        <h4><a href="#">USA, la Californie</a></h4>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_Californie-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
+    </div>
+    <div class="HiddenDestinations">
+        <h4><a href="#">Equateur, de Quito au Cotopaxi</a></h4>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_Quito-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
+    </div>
+    <div class="HiddenDestinations">
+        <h4><a href="#">Pérou, de Lima au Machupichu</a></h4>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_Palcoio-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
+    </div>
+    <div class="HiddenDestinations">
+        <h4><a href="#">Santiago du Chili</a></h4>
+        <a href="#"><img src="{{ asset('img/visites/mini/Mini_Santiago-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
+    </div>
+</section>
+
+
+    {#
     {% for visite in visites %}
 
         <section class="section wrap">
@@ -25,6 +99,6 @@
                 <img src="{{ asset('img/visites/'~visite.img1) }}" alt="photo {{ visite.titre }}" class="photo">
             </div>
         </section>
-
-    {% endfor %}
+    {% endfor %} #}
 {% endblock %}
+            {% block footer %}{% include ('inc/foot.html.twig') %}{% endblock %}

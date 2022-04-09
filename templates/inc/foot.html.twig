@@ -3,7 +3,11 @@
         <p><i>All works  &copy; Xavier Normandière {{ "now"|date("Y") }}</i></p>
         <p>Informations légales</p>
         <p>Liens rapides : <a href="{{ path('contact_formulaire') }}">Contact | </a>
+            {% if app.user %}
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
+            {% else %}
             <a href="{{ path('login') }}">Login</a>
+            {% endif %}
         </p>
     </section>
 </footer>

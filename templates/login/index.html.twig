@@ -7,7 +7,7 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <div class="blocLogin">
+    <div class="blocLogin box">
         <h2>Connectez vous à votre espace</h2>
         <form action="{{ path('login') }}" method="post" class="">
             <label for="username">Email:</label>

@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <section class="blocLogin">
+    <section class="blocLogin box2">
         <h2>Laissez votre message</h2>
     {{ form_start(form) }}
         {{ form_row(form.nom) }}
         {{ form_row(form.email) }}
         {{ form_row(form.message) }}
-        <button type="submit" class="btn btn-light">Enregistrer</button>
+        <button type="submit" class="btn btn-light">Envoyez</button>
 
         <br><br>
             <i>{{ form_row(form.conditions) }}</i>

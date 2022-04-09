@@ -24,6 +24,8 @@ hr{
 }
 header{
     border: 1px solid #6AE2D6;
+    position:relative;
+    z-index:2;
 }
 @font-face{
     font-family: 'CenturyGothic';
@@ -186,9 +188,25 @@ figcaption {
     border: 1px solid white;
     border-radius: 10px;
 }
-
-
-
+.box3 {
+    --mask:
+            radial-gradient(40px at 100% 100%,#0000 98%,#000) 100% 100%/100% 100% no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+.box4 {
+    --mask:
+            radial-gradient(40px at 100% 100%,#0000 98%,#000) 100% 100%/51% 100% no-repeat,
+            radial-gradient(40px at 0    100%,#0000 98%,#000) 0    100%/51% 100% no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+.box5 {
+    --mask:
+            radial-gradient(40px at 0    100%,#0000 98%,#000) 0    100%/100% 100% no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
 /* ************************************* CSS Flexbox Double *********************************/
 .section {
     display: flex;
@@ -342,7 +360,13 @@ figcaption {
         flex-direction: column;
     }
 
+    #introBloc2{
+        display: none !important;
+    }
 
+    .blocImg{
+        display: none;
+    }
 
 }
 /************************************NavBar ***********************/
@@ -379,6 +403,9 @@ nav ul{
     #menu li a, #menu li a:visited {font-size: 0.9rem;}
 }
 @media only screen and (max-width: 599px) {
+   .navbarPerso{
+       position: sticky !important;
+   }
     .mobile {
         display: block;
     }
@@ -442,7 +469,7 @@ footer{
 
 }
 .foot{
-    background-image: url('../img/main/fondsViolet50.jpg');
+    background-image: url('../img/main/fondsNoir-min.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -450,6 +477,7 @@ footer{
     margin-bottom: -1rem;
     padding-bottom: 1rem;
     border-radius: 45px 0 0 0;
+    color: white !important;
 }
 
 
@@ -470,8 +498,157 @@ footer{
     font-family: 'Poppins', sans-serif;
     text-shadow: 2px 2px 2px violet;
 }
+.box {
+    --mask:
+            radial-gradient(40px at 0    0   ,#0000 98%,#000) 0    0   /51% 51%  no-repeat,
+            radial-gradient(40px at 100% 0   ,#0000 98%,#000) 100% 0   /51% 51%  no-repeat,
+            radial-gradient(40px at 100% 100%,#0000 98%,#000) 100% 100%/51% 51%  no-repeat,
+            radial-gradient(40px at 0    100%,#0000 98%,#000) 0    100%/51% 51%  no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+.box2 {
+    --mask:
+            radial-gradient(40px at 100% 0   ,#0000 98%,#000) 100% 0   /100% 100% no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+/************* page Map monde *******************************/
 
+#introBloc2{
+    /* background-image: url(../images/light-gray.png);
+     background-repeat: no-repeat;
+     background-size:cover; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: row;
+    margin: auto;
+    width: 1100px;
+}
+.blocDestinations{
+    color: white;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.blocBtnCanada{
+    border: 1px solid white;
+    border-radius: 0.3em;
+    font-family: "Calibri light", Avenir, sans-serif;
+    font-size: 2em;
+    height: 60px;
+    width: 500px;
+}
+.cana{
+    position: relative;
+    top: 28%;
+    left: 35px;
+}
+.bouton{
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+}
+.bouton:hover{
+    text-decoration:underline;
+}
+.blocBtnNY{
+    border: 1px solid white;
+    border-radius: 0.5em;
+    height: 60px;
+    width: 500px;
+}
+.nyc{
+    position: relative;
+    top: 25%;
+    left: 5px;
+}
+.blocBtnCalif{
+    border: 1px solid white;
+    border-radius: 0.5em;
+    height: 60px;
+    width: 500px;
+}
+.cali{
+    position: relative;
+    top: 20%;
+    left: -140px;
+}
+.blocBtnEquat{
+    border: 1px solid white;
+    border-radius: 0.5em;
+    height: 60px;
+    width: 500px;
+}
+.equa{
 
+    position: relative;
+    top: 34%;
+    left: -25px;
+}
+.blocBtnPerou{
+    border: 1px solid white;
+    border-radius: 0.5em;
+    height: 60px;
+    width: 500px;
+}
+.peru{
+    position: relative;
+    top: 30%;
+    left: -20px;
+}
+.blocBtnStgo{
+    border: 1px solid white;
+    border-radius: 0.5em;
+    height: 60px;
+    width: 500px;
+}
+.stgo{
+    position: relative;
+    top: 39%;
+    left: 5px;
+}
+.blocImg{
+    /*  border: 1px solid white; */
+    height: 600px;
+    width: 500px;
+    background-image: url('../img/visites/fondsAmerique.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.HiddenDestinations{
+    display: none;
+}
+.HiddenWorld{
+    display: none;
+}
+/******************HiddenDestinations Mobile part *************/
+@media only screen and (max-width: 599px){
+    .HiddenWorld{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    }
+.HiddenDestinations{
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 0 4rem 1rem;
+    border: 1px solid white;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    }
+.HiddenImg{
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    }
+}
     /* effet sur scroll ********************************************* */
 .reveal-loaded .reveal [class*="reveal-"] {
     opacity: 0!important;

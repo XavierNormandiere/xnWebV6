@@ -1,75 +1,38 @@
-{# <nav class="navbar navbar-expand-lg fondsNav">
-    <div class="container-fluid">
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="{{ path('main_home') }}">Home Page | </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ path('contact_formulaire') }}"> Contact |</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ path('login') }}"> login |</a>
-                </li>
-
-                {% if app.user %}
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ path('visite_visites') }}"> Voyages | </a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ path('app_logout') }}"> logout {{ app.user.prenom }}|</a>
-                </li>
-                {% if is_granted("ROLE_ADMIN") %}
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ path('app_register') }}"> Register |</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ path('admin_admin') }}">Interface Admin |</a>
-                    </li>
-                {% endif %}
-                {% endif %}
-
-            </ul>
-        </div>
-    </div>
-</nav>  #}
 
 <nav class="navbarPerso">
-    <div class="">
-    <a href="#" id="boutonMenu" class="mobile" onclick="menumobile(); return false;">&#x2630;</a>
-    <ul id="menu">
-        <li><a href="{{ path('main_home') }}">Accueil |</a></li><br/>
-        {# <li class="deroulant"><a href="#">Produits Effet d'<strong>Ombre</strong> &ensp;</a>
-            <ul class="sous">
-                <br/><li><a href="pergolas.html">Pergolas</a></li><br/>
-                <li><a href="stores.html">Stores bannes</a></li><br/>
-                <li><a href="mobilier-exterieur.html">Mobilier extérieur</a></li><br/>
-                <li><a href="carport.html">Carports, pool-houses & abris</a></li>
-            </ul>
-        </li><br/> #}
-        <li><a href="{{ path('contact_formulaire') }}"> Contact |</a></li>
+        <a href="#" id="boutonMenu" class="mobile" onclick="menumobile(); return false;">&#x2630;</a>
+        <ul id="menu">
+            <li><a href="{{ path('main_home') }}">Accueil |</a></li><br/>
+            {# <li class="deroulant"><a href="#">Produits Effet d'<strong>Ombre</strong> &ensp;</a>
+                <ul class="sous">
+                    <br/><li><a href="pergolas.html">Pergolas</a></li><br/>
+                    <li><a href="stores.html">Stores bannes</a></li><br/>
+                    <li><a href="mobilier-exterieur.html">Mobilier extérieur</a></li><br/>
+                    <li><a href="carport.html">Carports, pool-houses & abris</a></li>
+                </ul>
+            </li><br/> #}
+            <li><a href="{{ path('contact_formulaire') }}"> Contact |</a></li>
 
-        <li><a href="{{ path('login') }}"> login |</a></li>
 
-        {% if app.user %}
-            <li class="">
-                <a class="" href="{{ path('visite_visites') }}"> World Tour | </a>
-            </li>
-            <li class="nav-item">
-                <a class="" href="{{ path('app_logout') }}"> logout {{ app.user.prenom }}|</a>
-            </li>
-            {% if is_granted("ROLE_ADMIN") %}
+            {% if app.user %}
                 <li class="">
-                    <a class="" href="{{ path('app_register') }}"> Register |</a>
+                    <a class="" href="{{ path('visite_visites') }}"> World Tour | </a>
                 </li>
-                <li class="">
-                    <a class="" href="{{ path('admin_admin') }}">Interface Admin |</a>
+                <li class="nav-item">
+                    <a class="" href="{{ path('app_logout') }}"> Déconnexion {{ app.user.prenom }}|</a>
                 </li>
+            {% else %}
+                <li><a href="{{ path('login') }}"> login |</a></li>
+
             {% endif %}
-        {% endif %}
-    </ul>
-    </div>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <li class="">
+                        <a class="" href="{{ path('app_register') }}"> Register |</a>
+                    </li>
+                    <li class="">
+                        <a class="" href="{{ path('admin_admin') }}">Interface Admin |</a>
+                    </li>
+
+            {% endif %}
+        </ul>
 </nav>

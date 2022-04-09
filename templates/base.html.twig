@@ -38,7 +38,6 @@
         {% endblock %} #}
     </head>
     <body>
-    {% include 'inc/nav.html.twig' %}
     {% for label, messages in app.flashes %}
         {% for message in messages %}
             <br>
@@ -49,6 +48,7 @@
     {% endfor %}
 
     <header>
+        {% include 'inc/nav.html.twig' %}
             {% block header %}{% endblock %}
         </header>
         <main>
@@ -68,6 +68,16 @@
                 var bloc = document.getElementById("menu");
                 bloc.classList.toggle("afficher");
             }
+        </script>
+        <script type="text/javascript" src="{{ asset('jss/destinations.js') }}"></script>
+
+        <script type="text/javascript">
+            afficher_cana('cana');
+            afficher_nyc('nyc');
+            afficher_cali('cali');
+            afficher_equa('equa');
+            afficher_peru('peru');
+            afficher_stgo('stgo');
         </script>
     {% endblock %}
     </body>
