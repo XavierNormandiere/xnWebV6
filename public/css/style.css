@@ -24,9 +24,14 @@ hr{
 }
 header{
     border: 1px solid #6AE2D6;
-    position:relative;
-    z-index:2;
+    position:relative; /** position header tjrs top */
+    z-index:2; /** position header tjrs top */
+    padding-bottom: 5rem;
 }
+.decalageTop{
+
+}
+
 @font-face{
     font-family: 'CenturyGothic';
     src: local("CenturyGothic"),
@@ -143,7 +148,7 @@ figcaption {
     text-shadow: 2px 2px 4px black;
     max-width: 500px;
     padding-top: 4rem;
-    margin: 2rem auto;
+    margin: auto;
 }
 .bloc1a{
     border-right: 1px solid white;
@@ -232,7 +237,7 @@ figcaption {
     max-width: 1100px;
     height: 30rem;
     margin: auto;
-    color: black;
+    color: white;
     font-family: 'Poppins', sans-serif;
 
     /* border-radius: 10px; */
@@ -463,10 +468,7 @@ nav ul{
 /*************************** FOOTER *********************/
 
 footer{
-
-
     height: 100%;
-
 }
 .foot{
     background-image: url('../img/main/fondsNoir-min.jpg');
@@ -625,6 +627,9 @@ footer{
 }
 .HiddenWorld{
     display: none;
+}
+.accesReserve{
+    height: 300px;
 }
 /******************HiddenDestinations Mobile part *************/
 @media only screen and (max-width: 599px){

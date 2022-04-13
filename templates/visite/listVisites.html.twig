@@ -81,10 +81,16 @@
         <h4><a href="#">Santiago du Chili</a></h4>
         <a href="#"><img src="{{ asset('img/visites/mini/Mini_Santiago-min.jpg') }}" alt="Bay watch" class="HiddenImg"></a>
     </div>
-</section>
-{% else %}
 
-{% endif %}
+</section>
+
+    {% else %}
+        <div class="accesReserve">
+            <a class="btn btn-warning" href="{{ path('login') }}">Accès réservé, connectez vous</a>
+        </div>
+    {% endif %}
+
+
     {#
     {% for visite in visites %}
 

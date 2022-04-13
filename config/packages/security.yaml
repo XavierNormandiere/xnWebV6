@@ -39,8 +39,7 @@ security:
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/register, roles: ROLE_ADMIN }
-         - { path: ^/visite, roles: ROLE_USER }
-
+         - { path: ^/visite, roles: IS_AUTHENTICATED_FULLY}
 when@test:
     security:
         password_hashers:
